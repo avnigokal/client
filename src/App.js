@@ -100,7 +100,7 @@ export default function App() {
         await setQuote(response.data);
         selectBackground();
         await axios
-          .post("http://192.168.2.7:3000/", {
+          .post("http://localhost:3000/", {
             category: quote.tags[0],
             rating: rating,
           })
@@ -116,7 +116,7 @@ export default function App() {
 
   const fetchTags = async () => {
     await axios
-      .get("http://192.168.2.7:3000/interested")
+      .get("http://localhost:3000/interested")
       .then(async (response) => {
         fetchQuotes(response.data);
       });
